@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Messages for Sabrina</title>
+  <meta name="description" content="A handwritten-style message to Sabrina, like notes on paper." />
+  <meta name="author" content="J'Kim Jamil Cagas" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #fff0f5;
+      color: #333;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-y: auto;
+      padding: 40px 20px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 40px 0;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .paper {
+      background-color: #fffef0;
+      border: 2px dashed #e0cfcf;
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 700px;
+      padding: 60px 50px;
+      border-radius: 16px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      text-align: left;
+      margin: 0 auto 30px auto;
+      box-sizing: border-box;
+    }
+
+    .page-number {
+      text-align: right;
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 25px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 700px;
+      width: 100%;
+      margin: 20px 0;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    .nav-buttons button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-buttons button:hover {
+      background-color: #e055a2;
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      display: inline-block;
+      text-align: center;
+      margin: 10px 0 30px;
+      color: #ff69b4;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #8a0033;
+      font-weight: 500;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+    <div class="paper" id="message-container">
+      <p id="message-text"></p>
+      <div class="page-number" id="page-number"></div>
+    </div>
+
+    <div class="nav-buttons">
+      <button onclick="prevMessage()">Previous</button>
+      <button onclick="nextMessage()">Next</button>
+    </div>
+
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; <script>document.write(new Date().getFullYear())</script> | J'Kim Jamil Cagas | Made with ♥️ for Sabrina
+  </footer>
+
+  <script>
+    const messages = [
+      `Mahal kong Sabrina,\n\nAlam kong hindi naging madali at kahit kailan ay hindi magiging madali para sa atin. Palagi mong pakatatandaan na mahal na mahal kita. Walang magbabago doon. Mahal kita palagi, love. Ikaw at ikaw, lagi-lagi at araw-araw.`,
+      `Mahal ko,\n\nPasensya na sa mga araw na hindi ako naging sapat para sa'yo. Sinusubukan ko naman at sinusubukan kong gawin ang makakaya ko at ang best ko. Hindi ako ang pinaka perpekto at pinaka matinong lalaki na nakilala mo, pero sinusubukan ko. Mahal kita, mahal ko. Mahal kita.`,
+      `Sabrina ko,\n\nPipiliin kita sa mga araw na hindi ka na kapili-pili at mamahalin kita sa mga araw na hindi ka na kamahal-mahal.\n\nPipiliin pa rin kita, kahit may dahilan para hindi. Kasi mahal kita. Palagi.`,
+    ];
+
+    let currentPage = 0;
+    const messageText = document.getElementById('message-text');
+    const pageNumber = document.getElementById('page-number');
+
+    function updateMessage() {
+      messageText.textContent = messages[currentPage];
+      pageNumber.textContent = `Page ${currentPage + 1} of ${messages.length}`;
+    }
+
+    function nextMessage() {
+      if (currentPage < messages.length - 1) {
+        currentPage++;
+        updateMessage();
+      }
+    }
+
+    function prevMessage() {
+      if (currentPage > 0) {
+        currentPage--;
+        updateMessage();
+      }
+    }
+
+    updateMessage();
+  </script>
+</body>
+</html>
