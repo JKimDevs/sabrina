@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Messages for Sabrina</title>
-  <meta name="description" content="A handwritten-style message to Sabrina, like notes on paper." />
+  <meta name="description" content="Handwritten-style love messages for Sabrina." />
   <meta name="author" content="J'Kim Jamil Cagas" />
   <style>
     html, body {
@@ -83,14 +83,25 @@
       transform: scale(1.05);
     }
 
-    .back-link {
-      display: inline-block;
-      text-align: center;
-      margin: 10px 0 30px;
-      color: #ff69b4;
-      font-weight: bold;
+    .back-button {
+      margin: 30px 0;
+    }
+
+    .back-button a {
       text-decoration: none;
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: bold;
       font-size: 1rem;
+      transition: background-color 0.3s, transform 0.2s;
+      display: inline-block;
+    }
+
+    .back-button a:hover {
+      background-color: #e055a2;
+      transform: scale(1.05);
     }
 
     footer {
@@ -115,7 +126,9 @@
       <button onclick="nextMessage()">Next</button>
     </div>
 
-    <a href="index.html" class="back-link">← Back to Home</a>
+    <div class="back-button">
+      <a href="index.html">← Back to Home</a>
+    </div>
   </div>
 
   <footer>
