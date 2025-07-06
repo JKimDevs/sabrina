@@ -1,171 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para kay Sabrina</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Sabrina</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Crimson+Text:wght@400;600&display=swap');
-
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
     }
 
     body {
-      margin: 0;
-      padding: 0;
-      background: #f9f3e9;
-      font-family: 'Crimson Text', serif;
-      height: 100vh;
-      overflow: hidden;
+      background-color: #fff0f5;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .envelope {
-      position: relative;
-      width: 300px;
-      height: 200px;
-      background-color: #f2e6d9;
-      border: 2px solid #caa66b;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-      cursor: pointer;
-      transition: transform 0.6s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      z-index: 10;
-    }
-
-    .flap {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #e6d3b3;
-      clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0% 100%);
-      z-index: 2;
-      transition: all 0.6s ease;
-    }
-
-    .heart {
-      font-size: 2em;
-      color: #ff4d6d;
-      z-index: 3;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    .letter {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: linear-gradient(rgba(255, 240, 230, 0.95), rgba(255, 235, 220, 0.95));
-      padding: 40px;
-      overflow-y: auto;
-      z-index: 1;
-    }
-
-    .letter-content {
-      background-color: rgba(255, 248, 240, 0.97);
-      padding: 60px;
-      border: 3px double #caa66b;
-      width: 95%;
-      max-width: 1000px;
-      margin: 80px auto;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-      font-family: 'Crimson Text', serif;
-      line-height: 1.9;
-      font-size: 1.5em;
-      color: #3e2c1c;
-      text-align: justify;
-      position: relative;
-    }
-
-    .letter h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3em;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      color: #a0522d;
+      padding: 20px;
+      color: #333;
+    }
+
+    .logo-container {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: #ff69b4;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      cursor: pointer;
     }
 
-    .letter p {
+    .logo {
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+      text-shadow: 0 0 4px rgba(139,0,55,0.5);
+      transition: transform 0.3s;
+    }
+
+    .options-container {
+      width: 100%;
+      max-width: 800px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .option {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 180px;
+      border: 1px solid #f0f0f0;
+    }
+
+    .option:hover {
+      transform: translateY(-5px);
+      background-color: #ff8fab;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .option-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+      color: #8a0033;
+      text-shadow: 0 0 2px rgba(255,255,255,0.5);
+    }
+
+    .option-title {
+      color: #50002b;
+      font-size: 20px;
+      font-weight: bold;
+      text-shadow: 0 0 2px rgba(255,255,255,0.5);
+    }
+
+    h1 {
+      color: #8a0033;
       margin-bottom: 30px;
-      padding: 0 10px;
+      font-size: 2.5rem;
+      text-shadow: 0 0 2px rgba(255,255,255,0.5);
     }
 
-    .signature {
-      text-align: right;
-      font-style: italic;
-      font-size: 1.3em;
-      margin-top: 50px;
-      padding-right: 10px;
+    footer {
+      margin-top: 40px;
+      color: #8a0033;
+      font-size: 14px;
+      padding: 20px 0;
+      font-weight: 500;
     }
 
-    @media (max-width: 600px) {
-      .letter-content {
-        padding: 40px 30px;
-        font-size: 1.2em;
+    @media (max-width: 768px) {
+      .options-container {
+        grid-template-columns: 1fr;
       }
 
-      .letter h1 {
-        font-size: 2.5em;
+      .logo-container {
+        width: 120px;
+        height: 120px;
+      }
+
+      .logo {
+        font-size: 28px;
       }
     }
   </style>
 </head>
 <body>
-  <div class="envelope" id="envelope" onclick="openLetter()">
-    <div class="flap" id="flap"></div>
-    <div class="heart">📩 Buksan Mo Ako</div>
+  <div class="logo-container" onclick="animateAndRedirect()">
+    <div class="logo" id="main-logo">S</div>
   </div>
 
-  <div class="letter" id="letter">
-    <div class="letter-content">
-      <h1>Para kay Sabrina</h1>
+  <h1>For Sabrina</h1>
 
-      <p><strong>Sabrina ko,</strong></p>
+  <div class="options-container">
+    <div class="option" onclick="window.location.href='messages.html'">
+      <div class="option-icon">💌</div>
+      <div class="option-title">Messages</div>
+    </div>
 
-      <p>
-        Simula nung dumating ka sa buhay ko, binigyan mo ng apoy ang puso ko—apoy na patuloy na nag-aalab. Palagi mong tatandaan na <strong>mahal na mahal kita</strong>, mahal ko. Kung ano yung pakiramdam nung nagsisimula pa lang tayo, ay ganoon pa rin ang pakiramdam ko hanggang ngayon—kung paano ako kiligin sa'yo, kung paano ako nasasabik tuwing magkikita tayo, at yung pakiramdam na parang bago pa lang ang lahat kahit ito ay paulit-ulit. Lagi mong tatandaan na <strong>mahal na mahal kita</strong>; walang magbabago doon. Patuloy kitang mamahalin habang ako'y nabubuhay—walang makapaghihiwalay sa atin.
-      </p>
+    <div class="option" onclick="window.location.href='playlist.html'">
+      <div class="option-icon">🎵</div>
+      <div class="option-title">Playlist</div>
+    </div>
 
-      <p>
-        Hindi ako ang pinakamabait, maalaga, mapagmahal, at pinakaperpektong tao na nakilala mo, pero handa kong ibuhos sa'yo ang lahat ng meron ako. Hindi naging madali at hindi magiging madali ang lahat para sa atin. Marami na tayong napagdaanan at panigurado, mas marami pa tayong pagdadaanan. <strong>Mamahalin kita kahit hindi ka na kamahal-mahal. Pipiliin kita kahit hindi ka na kapili-pili.</strong> Hindi ito isang pangakong mapapako, kundi ito'y mga salitang patuloy kong gagawin.
-      </p>
+    <div class="option" onclick="window.location.href='photos.html'">
+      <div class="option-icon">📷</div>
+      <div class="option-title">Photos</div>
+    </div>
 
-      <p>
-        <strong>Mahal na mahal kita, Sabrina Angel Samson.</strong> Mamahalin kita, pipiliin kita, at sisiguraduhin ko na tayo hanggang sa huli.
-      </p>
-
-      <div class="signature">
-        Nagmamahal,<br>
-        <em>J'Kim Jamil Cagas</em>
-      </div>
+    <div class="option" onclick="window.location.href='videos.html'">
+      <div class="option-icon">🎥</div>
+      <div class="option-title">Videos</div>
     </div>
   </div>
 
+  <footer>
+    <p>
+      &copy; <script>document.write(new Date().getFullYear())</script> | J'Kim Jamil Cagas | Made with ♥️
+    </p>
+  </footer>
+
   <script>
-    function openLetter() {
-      document.getElementById('flap').style.transform = 'rotateX(180deg)';
+    function animateAndRedirect() {
+      const logo = document.getElementById('main-logo');
+      logo.style.transform = 'scale(1.2)';
       setTimeout(() => {
-        document.getElementById('envelope').style.display = 'none';
-        document.getElementById('letter').style.display = 'block';
-      }, 800);
+        logo.style.transform = 'scale(1)';
+        window.location.href = 'messages.html';
+      }, 300);
     }
   </script>
 </body>
