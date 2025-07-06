@@ -1,175 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For Sabrina | A Sweet Collection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Sabrina</title>
+    <meta name="description" content="A special page made with love for Sabrina - Messages, Playlist, Photos and Videos">
+    <meta name="author" content="J'Kim Jamil Cagas">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #fff0f5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+        }
 
-    <meta name="description" content="A beautiful and heartfelt collection of messages, music, photos, and videos dedicated to Sabrina.">
-  <meta name="keywords" content="Sabrina, Love, Messages, Playlist, Photos, Videos, Dedication, Personal Website">
-  <meta name="author" content="J'Kim Jamil Cagas">
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: #ff69b4;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
 
-    <meta property="og:title" content="For Sabrina">
-  <meta property="og:description" content="A beautiful and heartfelt collection dedicated to Sabrina.">
-  <meta property="og:image" content="sabrina.jpg">
-  <meta property="og:url" content="http://localhost:5500">
-  <meta property="og:type" content="website">
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
-    <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="For Sabrina">
-  <meta name="twitter:description" content="A heartfelt digital gift dedicated to Sabrina with messages, music, and memories.">
-  <meta name="twitter:image" content="sabrina.jpg">
+        .options-container {
+            width: 100%;
+            max-width: 800px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Arial', sans-serif;
-    }
+        .option {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 180px;
+            border: 1px solid #f0f0f0;
+        }
 
-    body {
-      background-color: #fff0f5;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      color: #333;
-    }
+        .option:hover {
+            transform: translateY(-5px);
+            background-color: #ff8fab;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
 
-    .logo-container {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background-color: #ff69b4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 40px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      cursor: pointer;
-      overflow: hidden;
-    }
+        .option-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #8a0033;
+            text-shadow: 0 0 2px rgba(255,255,255,0.5);
+        }
 
-    .logo-img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
+        .option-title {
+            color: #50002b;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 0 0 2px rgba(255,255,255,0.5);
+        }
 
-    h1 {
-      color: #8a0033;
-      margin-bottom: 30px;
-      font-size: 2.5rem;
-      text-shadow: 0 0 2px rgba(255,255,255,0.5);
-    }
+        h1 {
+            color: #8a0033;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 0 0 2px rgba(255,255,255,0.5);
+        }
 
-    .options-container {
-      width: 100%;
-      max-width: 800px;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
+        footer {
+            margin-top: auto;
+            color: #8a0033;
+            font-size: 14px;
+            padding: 20px 0;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+        }
 
-    .option {
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 180px;
-      border: 1px solid #f0f0f0;
-    }
+        @media (max-width: 768px) {
+            .options-container {
+                grid-template-columns: 1fr;
+            }
 
-    .option:hover {
-      transform: translateY(-5px);
-      background-color: #ff8fab;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
+            .logo-container {
+                width: 120px;
+                height: 120px;
+            }
 
-    .option-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-      color: #8a0033;
-      text-shadow: 0 0 2px rgba(255,255,255,0.5);
-    }
-
-    .option-title {
-      color: #50002b;
-      font-size: 20px;
-      font-weight: bold;
-      text-shadow: 0 0 2px rgba(255,255,255,0.5);
-    }
-
-    footer {
-      margin-top: 40px;
-      color: #8a0033;
-      font-size: 14px;
-      padding: 20px 0;
-      font-weight: 500;
-    }
-
-    @media (max-width: 768px) {
-      .options-container {
-        grid-template-columns: 1fr;
-      }
-      .logo-container {
-        width: 120px;
-        height: 120px;
-      }
-    }
-  </style>
+            .logo {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="logo-container" onclick="animateAndRedirect()">
-    <img src="sabrina.jpeg" id="main-logo" class="logo-img" alt="Sabrina">
-  </div>
-
-  <h1>For Sabrina</h1>
-
-  <div class="options-container">
-    <div class="option" onclick="window.location.href='messages.html'">
-      <div class="option-icon">💌</div>
-      <div class="option-title">Messages</div>
+    <div class="logo-container" onclick="animateLogo()">
+        <img src="sabrina.jpg" alt="Sabrina">
     </div>
-    <div class="option" onclick="window.location.href='playlist.html'">
-      <div class="option-icon">🎵</div>
-      <div class="option-title">Playlist</div>
-    </div>
-    <div class="option" onclick="window.location.href='photos.html'">
-      <div class="option-icon">📷</div>
-      <div class="option-title">Photos</div>
-    </div>
-    <div class="option" onclick="window.location.href='videos.html'">
-      <div class="option-icon">🎥</div>
-      <div class="option-title">Videos</div>
-    </div>
-  </div>
 
-  <footer>
-    <p>&copy; <script>document.write(new Date().getFullYear())</script> | J'Kim Jamil Cagas | Made with ♥️</p>
-  </footer>
+    <h1>For Sabrina</h1>
 
-  <script>
-    function animateAndRedirect() {
-      const logo = document.getElementById('main-logo');
-      logo.style.transform = 'scale(1.2)';
-      setTimeout(() => {
-        logo.style.transform = 'scale(1)';
-        window.location.href = 'messages.html';
-      }, 300);
-    }
-  </script>
+    <div class="options-container">
+        <div class="option" onclick="window.location.href='messages.html'">
+            <div class="option-icon">💌</div>
+            <div class="option-title">Messages</div>
+        </div>
+
+        <div class="option" onclick="window.location.href='playlist.html'">
+            <div class="option-icon">🎵</div>
+            <div class="option-title">Playlist</div>
+        </div>
+
+        <div class="option" onclick="window.location.href='photos.html'">
+            <div class="option-icon">📷</div>
+            <div class="option-title">Photos</div>
+        </div>
+
+        <div class="option" onclick="window.location.href='videos.html'">
+            <div class="option-icon">🎥</div>
+            <div class="option-title">Videos</div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; <script>document.write(new Date().getFullYear())</script> | J'Kim Jamil Cagas | Made with ♥️ for Sabrina
+    </footer>
+
+    <script>
+        function animateLogo() {
+            const logo = document.querySelector('.logo-container');
+            logo.style.transform = 'scale(1.05)';
+            logo.style.transition = 'transform 0.3s';
+
+            setTimeout(() => {
+                logo.style.transform = 'scale(1)';
+            }, 300);
+        }
+    </script>
 </body>
 </html>
